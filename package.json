@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "redux-persist": "^6.0.0",
+    "stripe": "^12.9.0"
+  }
+}
