@@ -18,14 +18,14 @@ export default function CartPage() {
             try {
                 setRedirecting(true);
                 const { id } = await axios
-                    .post("/api/checkout-sessions", cartDetails)
+                    .post('/api/checkout-sessions', cartDetails)
                     .then((res) => res.data);
                 const result = await redirectToCheckout(id);
                 if (result?.error) {
                     console.log("Error in result:", result);
                 }
             } catch (error) {
-                console.log("Error:", error);
+                console.log("Error: ", error);
             } finally {
                 setRedirecting(false);
             }
@@ -36,7 +36,7 @@ export default function CartPage() {
         <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
             {cartCount > 0 ? (
                 <>
-                    <h2 className="text-4xl font-semibold">Your shopping cart </h2>
+                    <h2 className="text-4xl font-semibold">Seu carrinho de compras </h2>
                     <p className="mt-1 text-xl">
                         {cartCount} items{" "}
                         <button
@@ -50,7 +50,7 @@ export default function CartPage() {
             ) : (
                 <>
                     <h2 className="text-4xl font-semibold">
-                        Your shopping cart is empty.
+                        O seu carrinho de compras está vazio
                     </h2>
                     <p className="mt-1 text-xl">
                         Check out our awesome products{" "}

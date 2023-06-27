@@ -2,29 +2,20 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify:true,
-  optimizeFonts:true,
+  swcMinify: true,
+  optimizeFonts: true,
   images: {
+    domains: ['res.cloudinary.com'], // Adicionado o domínio aqui
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-        port:"",
-        pathname:"/duoqbhryx/**",
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: 'duoqbhryx/image/upload/**',
       },
     ],
-    minimumCacheTTL:1500000,
-  },
-  compiler: {
-    relay: {
-      // This should match relay.config.js
-      src: './',
-      artifactDirectory: './__generated__',
-      language: 'javascript',
-      eagerEsModules: false,
-    },
+    minimumCacheTTL: 1500000,
   },
 };
 
-
-module.exports = nextConfig
+module.exports = nextConfig;

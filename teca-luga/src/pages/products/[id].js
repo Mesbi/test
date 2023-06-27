@@ -15,7 +15,7 @@ export default function ProductPage({ product }) {
         event.preventDefault();
         const id = toast.loading(`Adding ${count} item${count > 1 ? "s" : ""}`);
         addItem(product,{ count });
-        toast.success(`${count} ${product.name} added`, {id});
+        toast.success(`${count} ${product.name} adicionado`, {id});
     }
 
 
@@ -36,10 +36,10 @@ export default function ProductPage({ product }) {
                     <h2 className="text-3-1 font-semibold">{product.name}</h2>
                     <p className="pt-2 flex items-center space-x-2">
                         <CheckIcon className="text-lime-500 w-5 h-5" />
-                        <span className="font-semibold">In stock</span>
+                        <span className="font-semibold">Em estoque</span>
                     </p>
                     <div className="mt-4 border-t pt-4">
-                        <p className="text-gray-500">Price:</p>
+                        <p className="text-gray-500">Preço:</p>
                         <p className="text-xl font-semibold">
                             {formatCurrencyString({
                                 value:product.price,
@@ -49,7 +49,7 @@ export default function ProductPage({ product }) {
                     </div>
 
                     <div className="mt-4 border-t pt-4">
-                        <p className="text-gray-500">Quantity:</p>
+                        <p className="text-gray-500">Quantidade:</p>
                         <div className="mt-1 flex items-center space-x-3">
                             <button
                                 disabled={count <= 1}
@@ -71,7 +71,7 @@ export default function ProductPage({ product }) {
                         <button onClick={onAddToCart}
                         className="w-full mt-4 border border-lime-500 py-2 px-6 bg-lime-500 hover:border-lime-600
                     focus:ring-4 focus:ring-opacity-50 focus:ring-lime-500 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-md">
-                            Add to cart
+                            Adicionar ao carrinho
                         </button>
                     </div>
                 </div>

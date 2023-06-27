@@ -13,7 +13,7 @@ export default function ProductCard({ product, index }) {
         event.preventDefault();
         const id = toast.loading("Adding 1 item...");
         addItem(product);
-        toast.success(`${product.name} added`, {id});
+        toast.success(`${product.name} adicionado`, {id});
     }
 
 
@@ -36,18 +36,18 @@ export default function ProductCard({ product, index }) {
                 />
             </div>
 
-            <div className="p-6 bg-blue-500">
+            <div className="p-5 bg-blue-500">
                 <p className="font-semibold text-lg">{product.name}</p>
             <Rating/>
-                <div className="mt-4 flex items-center justify-between space-x-2">
+                <div className="mt-6 flex items-center justify-between space-x-3">
                     <div>
-                        <p className="text-gray-500"> Price </p>
+                        <p className="text-gray-800"> Preço </p>
                         <p className="text-lg font-semibold">{formatCurrencyString({
                             currency: product.currency,
                             value: product.price,
                         })}</p>
                     </div>
-                    <button onClick={onAddToCart} className="border rounded-lg py-1 px-4"> Add to Cart </button>
+                    <button onClick={onAddToCart} className="border rounded-lg py-2 px-5"> Adicionar ao carrinho </button>
                 </div>
             </div>
         </Link>

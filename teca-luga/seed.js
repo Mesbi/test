@@ -1,9 +1,9 @@
 //require("dotenv").config({path:'./.env.local'});
-const Stripe = require ('stripe');
+const Stripe = require ("stripe");
 const products = require ('./products');
 
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 (async () => {
     for (const product of products) {
